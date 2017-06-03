@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiApp.Register"
+             Title="Create Account">
+    <StackLayout>
+        <Label Text="First Name" />
+        <Entry x:Name="firstNameTxt" Margin="0,10,0,0"/>
+        <Label Text="Last Name" />
+        <Entry x:Name="lastNameTxt" Margin="0,10,0,0"/>
+        <Label Text="Email" />
+        <Entry x:Name="emailTxt" Margin="0,10,0,0"/>
+        <Label Text="Mobile Number" />
+        <Entry x:Name="mobileNumberTxt" Margin="0,10,0,0"/>
+        <Label Text="Password" />
+        <Entry x:Name="passwordTxt" Margin="0,10,0,0" IsPassword="True"/>
+        <Button x:Name="createAccBtn" Text="Create Account"  HorizontalOptions="CenterAndExpand" Clicked="CreateAccBtn_ClickedAsync"/>
+    </StackLayout>
+</ContentPage>

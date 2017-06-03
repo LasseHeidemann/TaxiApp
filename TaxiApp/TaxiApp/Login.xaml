@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiApp.Login"
+             Title="Welcome to Unter Taxi!">
+    <StackLayout Padding="10,50,0,0">
+        <Label Text="Mobilenumber" XAlign="Center"/>
+        <Entry x:Name="loginMobileTxt" Margin="10"/>
+        <Label Text="Password" XAlign="Center"/>
+        <Entry x:Name="loginPasswordTxt" />
+        <Button x:Name="loginBtn" Text="Login" HorizontalOptions="Center" Margin="20" Clicked="loginBtn_ClickedAsync"/>
+        <Button x:Name="registerBtn" Text="Register" HorizontalOptions="Center" Clicked="registerBtn_ClickedAsync"/>
+        
+
+
+    </StackLayout>
+</ContentPage>
