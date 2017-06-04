@@ -12,8 +12,10 @@ namespace TaxiApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AccountPage : ContentPage
 	{
-		public AccountPage ()
+        int id;
+		public AccountPage (int ID)
 		{
+            id = ID;
 			InitializeComponent ();
 		}
 	}

@@ -22246,10 +22246,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nico\\Documents\\Visual Studio 2017\\Projects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\TaxiApp.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\Nico\\Desktop\\Computer-Science\\GitProjects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\TaxiApp.UWP.csproj",
       "projectName": "TaxiApp.UWP",
-      "projectPath": "C:\\Users\\Nico\\Documents\\Visual Studio 2017\\Projects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\TaxiApp.UWP.csproj",
-      "projectJsonPath": "C:\\Users\\Nico\\Documents\\Visual Studio 2017\\Projects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\project.json",
+      "projectPath": "C:\\Users\\Nico\\Desktop\\Computer-Science\\GitProjects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\TaxiApp.UWP.csproj",
+      "projectJsonPath": "C:\\Users\\Nico\\Desktop\\Computer-Science\\GitProjects\\TaxiApp\\TaxiApp\\TaxiApp.UWP\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

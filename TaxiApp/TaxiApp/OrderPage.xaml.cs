@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -39,13 +40,35 @@ namespace TaxiApp
 
         private void checkSharedBtn_Clicked(object sender, EventArgs e)
         {
+            var content = "";
+            var request = WebRequest.Create("http://nsterdt.000webhostapp.com/GetSharedTaxiStatus.php");
+            request.ContentType = "application/json";
+            request.Method = "GET";
+
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            {
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
+                }
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    content = reader.ReadToEnd();
+                    if (string.IsNullOrWhiteSpace(content))
+                    {
+                        Console.Out.WriteLine("Response contained empty body...");
+                    }
+                    else
+                    {
+                        Console.Out.WriteLine("Response Body: \r\n {0}", content);
+                    }
+                }
+            }
 
         }
 
         private async void createOrderBtn_ClickedAsync(object sender, EventArgs e)
         {
-            time = DateTime.Now.ToString("HH:mm");
-
             if (sharedTaxiCheck.IsEnabled)
             {
                 sharedTaxi = 1;
@@ -60,6 +83,16 @@ namespace TaxiApp
             }else
             {
                 handicapped = 0;
+            }
+
+            if (reserveCheck.IsEnabled)
+            {
+                reservePicker.IsEnabled = true;
+                time = reservePicker.Time.ToString("HH:mm");
+            } else
+            {
+                reservePicker.IsEnabled = false;
+                time = DateTime.Now.ToString("HH:mm");
             }
 
             location = locationTxt.Text;
