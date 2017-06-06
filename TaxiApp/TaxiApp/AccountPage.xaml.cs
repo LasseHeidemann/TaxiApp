@@ -16,7 +16,17 @@ namespace TaxiApp
 		public AccountPage (int ID)
 		{
             id = ID;
-			InitializeComponent ();
+            InitializeComponent();
 		}
-	}
+
+        private void changeEmailBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePasswordBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

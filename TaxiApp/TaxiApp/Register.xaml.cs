@@ -39,8 +39,9 @@ namespace TaxiApp
 
             App.DB.RegisterCustomer(c);
 
-            Uri uri = new Uri("http://nsterdt.000webhostapp.com/CreateCustomer.php");
+            Uri uri = new Uri("https://divided-cages.000webhostapp.com/CreateCustomer.php");
             WebClient client = new WebClient();
+            client.UseDefaultCredentials = true;
             NameValueCollection parameters = new NameValueCollection();
 
             parameters.Add("FirstName", fName);
@@ -49,7 +50,14 @@ namespace TaxiApp
             parameters.Add("MobileNumber", mobileNumber);
             parameters.Add("Password", password);
 
-            await client.UploadValuesTaskAsync(uri, parameters);
+            try
+            {
+                await client.UploadValuesTaskAsync(uri, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
     }

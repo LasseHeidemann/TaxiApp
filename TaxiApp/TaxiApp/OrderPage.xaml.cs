@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +18,9 @@ namespace TaxiApp
 	{
         int[] personArr = {1, 2, 3, 4};
         int[] childseatsArr = { 0, 1, 2 };
-        int id, sharedTaxi, handicapped;
+        int sharedTaxi, handicapped, id;
         string persons, childseats;
-        String time;
+        String time, date;
 
         String destination, location;
 		public OrderPage (int ID)
@@ -40,36 +41,35 @@ namespace TaxiApp
 
         private void checkSharedBtn_Clicked(object sender, EventArgs e)
         {
-            var content = "";
-            var request = WebRequest.Create("http://nsterdt.000webhostapp.com/GetSharedTaxiStatus.php");
-            request.ContentType = "application/json";
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://divided-cages.000webhostapp.com/GetSharedTaxiStatus.php");
             request.Method = "GET";
+            String content = String.Empty;
 
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-                if (response.StatusCode != HttpStatusCode.OK)
-                {
-                    Console.Out.WriteLine("Error fetching data. Server returned status code: {0}", response.StatusCode);
-                }
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    content = reader.ReadToEnd();
-                    if (string.IsNullOrWhiteSpace(content))
-                    {
-                        Console.Out.WriteLine("Response contained empty body...");
-                    }
-                    else
-                    {
-                        Console.Out.WriteLine("Response Body: \r\n {0}", content);
-                    }
-                }
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                content = reader.ReadToEnd();
+                reader.Close(); ;
+                dataStream.Close();
+            }
+
+            if (content == "1")
+            {
+                sharedTaxiCheck.IsEnabled = true;
+            } 
+            else if (content == "0")
+            {
+                sharedTaxiCheck.IsEnabled = false;
+                sharedTaxiCheck.IsToggled = false;
             }
 
         }
 
         private async void createOrderBtn_ClickedAsync(object sender, EventArgs e)
         {
-            if (sharedTaxiCheck.IsEnabled)
+            date = DateTime.Now.ToString("dd/MM/yyyy");
+            if (sharedTaxiCheck.IsToggled)
             {
                 sharedTaxi = 1;
             } else
@@ -77,7 +77,7 @@ namespace TaxiApp
                 sharedTaxi = 0;
             }
 
-            if (handicappedCheck.IsEnabled)
+            if (handicappedCheck.IsToggled)
             {
                 handicapped = 1;
             }else
@@ -85,7 +85,7 @@ namespace TaxiApp
                 handicapped = 0;
             }
 
-            if (reserveCheck.IsEnabled)
+            if (reserveCheck.IsToggled)
             {
                 reservePicker.IsEnabled = true;
                 time = reservePicker.Time.ToString("HH:mm");
@@ -100,20 +100,55 @@ namespace TaxiApp
             persons = personsPicker.Items[personsPicker.SelectedIndex];
             childseats = childseatsPicker.Items[childseatsPicker.SelectedIndex];
 
-            Uri uri = new Uri("http://nsterdt.000webhostapp.com/CreateOrder.php");
+            Uri uri = new Uri("https://divided-cages.000webhostapp.com/CreateOrder.php");
             WebClient client = new WebClient();
             NameValueCollection parameters = new NameValueCollection();
 
             parameters.Add("CustomerID", id+"");
-            parameters.Add("Location", destination);
-            parameters.Add("Destination", location);
+            parameters.Add("Location", location);
+            parameters.Add("Destination", destination);
             parameters.Add("Time", time);
             parameters.Add("SharedTaxi", sharedTaxi+"");
             parameters.Add("Persons", persons);
             parameters.Add("Childseats", childseats);
             parameters.Add("Handicapped", handicapped+"");
 
-            await client.UploadValuesTaskAsync(uri, parameters);
+
+            try
+            {
+                await client.UploadValuesTaskAsync(uri, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            Order o = new Order();
+            o.CustomerID = id;
+            o.Location = location;
+            o.Destination = destination;
+            o.Date = date;
+            o.Time = time;
+            if (sharedTaxi == 0)
+            {
+                o.SharedTaxi = false;
+            } else
+            {
+                o.SharedTaxi = true;
+            }
+
+            o.NoOfPersons = persons;
+            o.Childseats = childseats;
+            if (handicapped == 0)
+            {
+                o.Handicapped = false;
+            }
+            else
+            {
+                o.Handicapped = true;
+            }
+
+            App.DB.CreateOrder(o);
         }
 
         private void personsPicker_SelectedIndexChanged(object sender, EventArgs e)

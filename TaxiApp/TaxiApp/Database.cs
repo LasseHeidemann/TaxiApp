@@ -18,6 +18,7 @@ namespace TaxiApp
             try
             {
                 CreateTable<Customer>();
+                CreateTable<Order>();
             } catch (SQLiteException ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -116,6 +117,43 @@ namespace TaxiApp
             {
                 return -1;
             }
+        }
+
+        public int CreateOrder(Order order)
+        {
+            //Autoincrement the ID of the order
+            int lastID = getNoOfOrders();
+            order.OrderID = lastID + 1;
+
+            try
+            {
+                return Insert(order);
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return 0;
+            }
+        }
+
+        private int getNoOfOrders()
+        {
+            try
+            {
+                // this counts all customers in the database
+                var count = this.ExecuteScalar<int>("SELECT Count(*) FROM Order");
+
+                return count;
+            }
+            catch (SQLiteException)
+            {
+                return -1;
+            }
+        }
+
+        public List<Order> GetOrders()
+        {
+            return Table<Order>().ToList();
         }
     }
 }

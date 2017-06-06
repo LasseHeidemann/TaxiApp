@@ -12,9 +12,14 @@ namespace TaxiApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PreviousOrders : ContentPage
 	{
+        List<Order> orderList;
 		public PreviousOrders ()
 		{
-			InitializeComponent ();
+            InitializeComponent();
+            this.BindingContext = orderList;
+            
+            orderList = App.DB.GetOrders();
+            lstOrders.ItemsSource = orderList;
 		}
 	}
 }

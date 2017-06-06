@@ -11,8 +11,8 @@
 namespace TaxiApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\Nico\\Documents\\Visual Studio 2017\\Projects\\TaxiApp\\TaxiApp\\TaxiApp\\Order" +
-        "Page.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\Nico\\Desktop\\Computer-Science\\GitProjects\\TaxiApp\\TaxiApp\\TaxiApp\\OrderP" +
+        "age.xaml")]
     public partial class OrderPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

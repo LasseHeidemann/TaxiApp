@@ -71,6 +71,8 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\SQLitePCLRaw.core.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\SQLitePCLRaw.lib.e_sqlite3.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Android.Support.Design.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Android.Support.v4.dll
@@ -87,6 +89,8 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\FormsViewGroup.dll.mdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\SQLite-net.xml
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\SQLite-net.dll.mdb
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Core.pdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Core.xml
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Core.dll.mdb
@@ -95,7 +99,6 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.csprojResolveAssemblyReference.cache
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.MainPage.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.App.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.Login.xaml.g.cs
@@ -103,7 +106,6 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.OrderPage.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.AccountPage.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.PreviousOrders.xaml.g.cs
-C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMain.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.pdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\bin\TaxiApp.Android.apk

@@ -1,5 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaxiApp.AccountPage">
+             x:Class="TaxiApp.AccountPage"
+             Title="Account">
+    
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" BackgroundColor="LightGray">
+            <Label Text="Change Email"/>
+            <Entry x:Name="oldEmailTxt" Text="Old email"/>
+            <Entry x:Name="newEmailTxt" Text="New email"/>
+            <Button x:Name="changeEmailBtn" Text="Change email" Clicked="changeEmailBtn_Clicked"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" BackgroundColor="LightGray">
+            <Label Text="Change Password"/>
+            <Entry x:Name="oldPasswordTxt" Text="Old password"/>
+            <Entry x:Name="newPasswordTxt" Text="New password"/>
+            <Entry x:Name="newPasswordRepeatTxt" Text="Repeat new password"/>
+            <Button x:Name="changePasswordBtn" Text="Change Password" Clicked="changePasswordBtn_Clicked"/>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="2">
+            <Button x:Name="deleteAccountBtn" Text="Delete Account"/>
+        </StackLayout>
+    </Grid>
+
 </ContentPage>
+    
+    
