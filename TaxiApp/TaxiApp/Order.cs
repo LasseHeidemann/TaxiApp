@@ -23,8 +23,8 @@ namespace TaxiApp
 
         public override string ToString()
         {
-            return string.Format("[Order: OrderID={0}, CustomerID={1}, Location={2}, Destination={3}," +
-                "Date={4}", "Time={5}, SharedTaxi={6}, NoOfPersons={7}, Childseats={8}, Handicapped={9}]",
+            return string.Format("[Order: OrderID={0}, CustomerID={1}, Location={2}, Destination={3}, " +
+                "Date={4}, Time={5}, SharedTaxi={6}, NoOfPersons={7}, Childseats={8}, Handicapped={9}]",
                 OrderID, CustomerID, Location, Destination, Date, Time, SharedTaxi, NoOfPersons, Childseats, Handicapped);
         }
     }

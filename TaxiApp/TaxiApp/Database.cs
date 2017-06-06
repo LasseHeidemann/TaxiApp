@@ -57,6 +57,36 @@ namespace TaxiApp
             }
         }
 
+        public string GetCustomerName(int id)
+        {
+            try
+            {
+                Customer customer = Table<Customer>().Where(c => c.ID == id).First();
+                string firstname = customer.FirstName;
+                string lastName = customer.LastName;
+                return firstname + " " + lastName;
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
+        public string GetCustomerEmail(int id)
+        {
+            try
+            {
+                Customer customer = Table<Customer>().Where(c => c.ID == id).First();
+                return customer.Email;
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
         public void DeleteCustomer(Customer customer)
         {
             try
@@ -113,8 +143,9 @@ namespace TaxiApp
 
                 return count;
             }
-            catch (SQLiteException)
+            catch (SQLiteException ex)
             {
+                Console.WriteLine(ex.ToString());
                 return -1;
             }
         }
@@ -124,9 +155,11 @@ namespace TaxiApp
             //Autoincrement the ID of the order
             int lastID = getNoOfOrders();
             order.OrderID = lastID + 1;
+            Console.WriteLine("lastID: " + lastID);
 
             try
             {
+                Console.WriteLine("hello" + order.ToString());
                 return Insert(order);
             }
             catch (SQLiteException ex)
@@ -145,15 +178,16 @@ namespace TaxiApp
 
                 return count;
             }
-            catch (SQLiteException)
+            catch (SQLiteException ex)
             {
+                Console.WriteLine(ex.ToString());
                 return -1;
             }
         }
 
-        public List<Order> GetOrders()
+        public List<Order> GetOrders(int id)
         {
-            return Table<Order>().ToList();
+            return Table<Order>().Where(o => o.CustomerID == id).ToList();
         }
     }
 }

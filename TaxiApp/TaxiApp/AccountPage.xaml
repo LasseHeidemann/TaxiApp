@@ -8,14 +8,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.65*"/>
         </Grid.RowDefinitions>
 
         <StackLayout Grid.Row="0" BackgroundColor="LightGray">
             <Label Text="Change Email"/>
             <Entry x:Name="oldEmailTxt" Text="Old email"/>
             <Entry x:Name="newEmailTxt" Text="New email"/>
-            <Button x:Name="changeEmailBtn" Text="Change email" Clicked="changeEmailBtn_Clicked"/>
+            <Button x:Name="changeEmailBtn" Text="Change email" Clicked="changeEmailBtn_ClickedAsync"/>
         </StackLayout>
 
         <StackLayout Grid.Row="1" BackgroundColor="LightGray">
@@ -23,7 +23,7 @@
             <Entry x:Name="oldPasswordTxt" Text="Old password"/>
             <Entry x:Name="newPasswordTxt" Text="New password"/>
             <Entry x:Name="newPasswordRepeatTxt" Text="Repeat new password"/>
-            <Button x:Name="changePasswordBtn" Text="Change Password" Clicked="changePasswordBtn_Clicked"/>
+            <Button x:Name="changePasswordBtn" Text="Change Password" Clicked="changePasswordBtn_ClickedAsync"/>
         </StackLayout>
         
         <StackLayout Grid.Row="2">

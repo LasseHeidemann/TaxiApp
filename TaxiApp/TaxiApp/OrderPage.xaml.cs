@@ -23,9 +23,11 @@ namespace TaxiApp
         String time, date;
 
         String destination, location;
-		public OrderPage (int ID)
+
+       
+        public OrderPage ()
 		{
-            id = ID;
+            id = SessionUser.ID;
 			InitializeComponent ();
 
             foreach (int number in personArr)
@@ -116,7 +118,7 @@ namespace TaxiApp
 
             try
             {
-                await client.UploadValuesTaskAsync(uri, parameters);
+                //await client.UploadValuesTaskAsync(uri, parameters);
             }
             catch (Exception ex)
             {
@@ -148,6 +150,8 @@ namespace TaxiApp
                 o.Handicapped = true;
             }
 
+            Console.WriteLine(o.ToString());
+
             App.DB.CreateOrder(o);
         }
 
@@ -160,5 +164,16 @@ namespace TaxiApp
         {
             string childseats = childseatsPicker.Items[childseatsPicker.SelectedIndex];
         }
+
+        private void reserveCheck_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (reserveCheck.IsToggled){
+                reservePicker.IsEnabled = true;
+            } else
+            {
+                reservePicker.IsEnabled = false;
+            }
+        }
+
     }
 }

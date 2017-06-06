@@ -19,7 +19,6 @@ namespace TaxiApp
         public Register ()
 		{
 			InitializeComponent ();
-            //DB = new Database();
 		}
 
         private async void CreateAccBtn_ClickedAsync(object sender, EventArgs e)

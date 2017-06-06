@@ -61,8 +61,8 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Label Text="Reserve" Grid.Row="0"/>
-            <Switch x:Name="reserveCheck" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" />
-            <TimePicker x:Name="reservePicker" Grid.Row="1" Grid.Column="1"/>
+            <Switch x:Name="reserveCheck" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" Toggled="reserveCheck_Toggled"/>
+            <TimePicker x:Name="reservePicker" IsEnabled="False" Grid.Row="1" Grid.Column="1"/>
         </Grid>
 
         <Button x:Name="createOrderBtn" Text="Create Order" Grid.Row="5" BackgroundColor="LightGray" Clicked="createOrderBtn_ClickedAsync"/>

@@ -13,13 +13,20 @@ namespace TaxiApp
 	public partial class PreviousOrders : ContentPage
 	{
         List<Order> orderList;
+        int id;
 		public PreviousOrders ()
 		{
+            id = SessionUser.ID;
             InitializeComponent();
             this.BindingContext = orderList;
             
-            orderList = App.DB.GetOrders();
+            orderList = App.DB.GetOrders(id);
             lstOrders.ItemsSource = orderList;
+
+            foreach (Order o in orderList)
+            {
+                Console.WriteLine(o.ToString());
+            }
 		}
 	}
 }

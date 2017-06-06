@@ -25,11 +25,13 @@ namespace TaxiApp
         {
             String mobilenumber = loginMobileTxt.Text;
             String password = loginPasswordTxt.Text;
-            int id = App.DB.Login("5250", "bla");
+            int id = App.DB.Login(mobilenumber, password);
 
             if (id != 0)
             {
-                await Navigation.PushAsync(new OrderPage(id));
+                SessionUser.ID = id;
+                await Navigation.PushAsync(new TabbedMain());
+                Console.WriteLine(id);
             } else
             {
                 await DisplayAlert("Wrong information", "Mobilenumber and password don't match", "OK");

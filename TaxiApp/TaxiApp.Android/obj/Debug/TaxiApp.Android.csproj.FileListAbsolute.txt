@@ -122,3 +122,6 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMain.xaml.g.cs
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMainTab1.xaml.g.cs
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.csprojResolveAssemblyReference.cache

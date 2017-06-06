@@ -3,21 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaxiApp.PreviousOrders"
              Title="Previous Orders">
-    
-    <ListView x:Name="lstOrders">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="{Binding Date}"/>
-                        <Label Text="{Binding Location}"/>
-                        <Label Text="{Binding Destination}"/>
-                        <Label Text="{Binding Time}"/>
-                    </StackLayout>
-                </TextCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-        
-    
+
+    <StackLayout Padding="10">
+        <ListView x:Name="lstOrders">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.66*"/>
+                                <ColumnDefinition Width="0.66*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Location, StringFormat='From: {0}'}" Grid.Column="0"/>
+                            <Label Text="{Binding Destination, StringFormat='To: {0}'}" Grid.Column="1"/>
+                            <Label Text="{Binding Date, StringFormat='When: {0}'}" Grid.Column="2"/>
+                            <Label Text="{Binding Time, StringFormat='At: {0}'}" Grid.Column="3"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
 </ContentPage>
