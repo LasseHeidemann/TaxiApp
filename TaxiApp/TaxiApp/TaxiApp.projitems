@@ -22,6 +22,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Logout.xaml.cs">
+      <DependentUpon>Logout.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -41,10 +45,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)SessionUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TabbedMain.xaml.cs">
       <DependentUpon>TabbedMain.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)TabbedMainTab1.xaml.cs">
-      <DependentUpon>TabbedMainTab1.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -95,7 +95,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TabbedMainTab1.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Logout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

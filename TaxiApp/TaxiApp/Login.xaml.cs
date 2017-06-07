@@ -31,7 +31,7 @@ namespace TaxiApp
             {
                 SessionUser.ID = id;
                 await Navigation.PushAsync(new TabbedMain());
-                Console.WriteLine(id);
+                Navigation.RemovePage(this);
             } else
             {
                 await DisplayAlert("Wrong information", "Mobilenumber and password don't match", "OK");

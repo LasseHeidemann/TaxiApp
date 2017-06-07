@@ -14,7 +14,14 @@ namespace TaxiApp
     {
         public TabbedMain ()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

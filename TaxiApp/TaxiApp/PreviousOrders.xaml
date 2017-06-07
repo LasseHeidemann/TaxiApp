@@ -4,8 +4,44 @@
              x:Class="TaxiApp.PreviousOrders"
              Title="Previous Orders">
 
-    <StackLayout Padding="10">
-        <ListView x:Name="lstOrders">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        
+        <StackLayout Grid.Row="0" Margin="0,15,0,0">
+            <Label Text="Upcoming Orders"/>
+        <ListView x:Name="lstUpcoming">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.66*"/>
+                                <ColumnDefinition Width="0.66*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Location, StringFormat='From: {0}'}" Grid.Column="0" Grid.Row="0"/>
+                            <Label Text="{Binding Destination, StringFormat='To: {0}'}" Grid.Column="1" Grid.Row="0"/>
+                            <Label Text="{Binding Date, StringFormat='When: {0}'}" Grid.Column="2" Grid.Row="0"/>
+                            <Label Text="{Binding Time, StringFormat='At: {0}'}" Grid.Column="3" Grid.Row="0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="cancelOrderBtn" Text="Cancel Order" Clicked="cancelOrderBtn_ClickedAsync"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1">
+        <Label Text="Past Orders"/>
+        <ListView x:Name="lstPast">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -25,7 +61,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+        </StackLayout>
+    </Grid>
 
 
 </ContentPage>

@@ -14,7 +14,7 @@ namespace TaxiApp
 		{
 			InitializeComponent();
 
-            string dbFile = "Database.db3";
+            string dbFile = "Unter_Taxi.db3";
             var dbPath = "";
 
 #if __ANDROID__

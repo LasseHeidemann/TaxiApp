@@ -106,6 +106,8 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.OrderPage.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.AccountPage.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.PreviousOrders.xaml.g.cs
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMain.xaml.g.cs
+C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.Logout.xaml.g.cs
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.dll
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.pdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\bin\TaxiApp.Android.apk
@@ -122,6 +124,3 @@ C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Andro
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMain.xaml.g.cs
-C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Droid.TabbedMainTab1.xaml.g.cs
-C:\Users\Nico\Desktop\Computer-Science\GitProjects\TaxiApp\TaxiApp\TaxiApp.Android\obj\Debug\TaxiApp.Android.csprojResolveAssemblyReference.cache

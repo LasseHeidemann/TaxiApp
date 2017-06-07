@@ -8,4 +8,5 @@
   <pages:OrderPage/>
   <pages:PreviousOrders/>
   <pages:AccountPage/>
+  <pages:Logout/>
 </TabbedPage>

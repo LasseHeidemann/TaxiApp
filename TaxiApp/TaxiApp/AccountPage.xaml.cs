@@ -18,11 +18,18 @@ namespace TaxiApp
         string name, oldEmail, newEmail, oldPassword, newPassword, newPasswordRepeat, email;
 		public AccountPage ()
 		{
-            id = SessionUser.ID;
-            name = App.DB.GetCustomerName(id);
-            InitializeComponent();
-            this.Title = name;
-		}
+            try
+            {
+                id = SessionUser.ID;
+                name = App.DB.GetCustomerName(id);
+                InitializeComponent();
+                this.Title = name;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
 
         private async void changeEmailBtn_ClickedAsync(object sender, EventArgs e)
         {
