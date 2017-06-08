@@ -16,7 +16,9 @@ namespace TaxiApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OrderPage : ContentPage
 	{
-        int[] personArr = { 1, 2, 3, 4 };
+        //Options for the selection of the persons
+        int[] personArr = { 1, 2, 3, 4, 5, 6, 7 };
+        //Options for the selection of the childseats
         int[] childseatsArr = { 0, 1, 2 };
         int sharedTaxi, handicapped, id;
         string persons, childseats;
@@ -32,6 +34,7 @@ namespace TaxiApp
                 id = SessionUser.ID;
                 InitializeComponent();
 
+                //Adding the options to the Pickers
                 foreach (int number in personArr)
                 {
                     personsPicker.Items.Add(number + "");
@@ -46,13 +49,15 @@ namespace TaxiApp
                 Console.WriteLine(ex.ToString());
             }
 }
-
+        //Button used to retrieve the information, whether or not SharedTaxi Mode is enabled
         private void checkSharedBtn_Clicked(object sender, EventArgs e)
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://divided-cages.000webhostapp.com/GetSharedTaxiStatus.php");
+            //REST Service to retrieve the Boolean, telling if SharedTaxi Mode is enabled or not
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://nsterdt.000webhostapp.com/GetSharedTaxiStatus.php");
             request.Method = "GET";
             String content = String.Empty;
 
+            //Get response from the WebRequest
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
                 Stream dataStream = response.GetResponseStream();
@@ -62,6 +67,7 @@ namespace TaxiApp
                 dataStream.Close();
             }
 
+            //Set the check to be enabled if SharedTaxi mode is enabled, and disable it if not
             if (content == "1")
             {
                 sharedTaxiCheck.IsEnabled = true;
@@ -74,10 +80,12 @@ namespace TaxiApp
 
         }
 
+        //Button used to create the Order of the customer
         private async void createOrderBtn_ClickedAsync(object sender, EventArgs e)
         {
             try
             {
+                //Today's Date, required for the Order in the SQLite database
                 date = DateTime.Now.ToString("dd/MM/yyyy");
                 if (sharedTaxiCheck.IsToggled)
                 {
@@ -113,7 +121,8 @@ namespace TaxiApp
                 persons = personsPicker.Items[personsPicker.SelectedIndex];
                 childseats = childseatsPicker.Items[childseatsPicker.SelectedIndex];
 
-                Uri uri = new Uri("https://divided-cages.000webhostapp.com/CreateOrder.php");
+                //REST service to create the order in the MySQL Database
+                Uri uri = new Uri("https://nsterdt.000webhostapp.com/CreateOrder.php");
                 WebClient client = new WebClient();
                 NameValueCollection parameters = new NameValueCollection();
 
@@ -136,8 +145,8 @@ namespace TaxiApp
                     Console.WriteLine(ex.ToString());
                 }
 
-                //Get highest order ID
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://divided-cages.000webhostapp.com/GetHighestOrderID.php");
+                //REST service used to retrieve the ID of the lastly created customer
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://nsterdt.000webhostapp.com/GetHighestOrderID.php");
                 request.Method = "GET";
                 String highestID = String.Empty;
 

@@ -7,7 +7,7 @@
         <Label Text="Mobilenumber" XAlign="Center"/>
         <Entry x:Name="loginMobileTxt" Margin="10"/>
         <Label Text="Password" XAlign="Center"/>
-        <Entry x:Name="loginPasswordTxt" />
+        <Entry x:Name="loginPasswordTxt" IsPassword="True"/>
         <Button x:Name="loginBtn" Text="Login" HorizontalOptions="Center" Margin="20" Clicked="loginBtn_ClickedAsync"/>
         <Button x:Name="registerBtn" Text="Register" HorizontalOptions="Center" Clicked="registerBtn_ClickedAsync"/>
         

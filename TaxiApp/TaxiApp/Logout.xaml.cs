@@ -24,10 +24,13 @@ namespace TaxiApp
             }
         }
 
+        //Button used to log the customers account out
         private void logoutBtn_Clicked(object sender, EventArgs e)
         {
             try
             {
+                //Reset the SessionUser ID and redirect the customer to the Login Page
+                SessionUser.ID = 0;
                 Application.Current.MainPage = new NavigationPage(new Login());
             } catch (Exception ex)
             {

@@ -22,6 +22,7 @@ namespace TaxiApp
 			InitializeComponent ();
 		}
 
+        //Button used to create an account
         private async void CreateAccBtn_ClickedAsync(object sender, EventArgs e)
         {
             fName = firstNameTxt.Text;
@@ -30,7 +31,8 @@ namespace TaxiApp
             mobileNumber = mobileNumberTxt.Text;
             password = passwordTxt.Text;
 
-            Uri uri = new Uri("https://divided-cages.000webhostapp.com/CreateCustomer.php");
+            //REST service used to create the customer in the MySQL database
+            Uri uri = new Uri("https://nsterdt.000webhostapp.com/CreateCustomer.php");
             WebClient client = new WebClient();
             client.UseDefaultCredentials = true;
             NameValueCollection parameters = new NameValueCollection();
@@ -50,8 +52,8 @@ namespace TaxiApp
                 Console.WriteLine(ex.ToString());
             }
 
-            //Get highest customer ID from MySQL
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://divided-cages.000webhostapp.com/GetHighestCustomerID.php");
+            //REST service used to retrieve the ID of the customer just created
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://nsterdt.000webhostapp.com/GetHighestCustomerID.php");
             request.Method = "GET";
             String highestID = String.Empty;
 

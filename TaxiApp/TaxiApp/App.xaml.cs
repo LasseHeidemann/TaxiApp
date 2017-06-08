@@ -14,6 +14,7 @@ namespace TaxiApp
 		{
 			InitializeComponent();
 
+            //Definition of the SQLite Database
             string dbFile = "Unter_Taxi.db3";
             var dbPath = "";
 
@@ -34,6 +35,7 @@ namespace TaxiApp
 #endif
 #endif
 
+            //Creation of the SQLite Database
             DB = new Database(dbPath);
 
             MainPage = new NavigationPage(new Login());

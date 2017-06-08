@@ -20,6 +20,7 @@ namespace TaxiApp
 		{
             try
             {
+                //Get the ID of the SessionUser
                 id = SessionUser.ID;
                 name = App.DB.GetCustomerName(id);
                 InitializeComponent();
@@ -31,6 +32,7 @@ namespace TaxiApp
             }
         }
 
+        //Button used to change the customers email address, comparing his old one and the entered new one.
         private async void changeEmailBtn_ClickedAsync(object sender, EventArgs e)
         {
             oldEmail = oldEmailTxt.Text;
@@ -38,7 +40,8 @@ namespace TaxiApp
 
             if (!oldEmail.Equals(newEmail))
             {
-                Uri uri = new Uri("https://divided-cages.000webhostapp.com/UpdateEmail.php");
+                //Calling the REST service to update the email adress
+                Uri uri = new Uri("https://nsterdt.000webhostapp.com/UpdateEmail.php");
                 WebClient client = new WebClient();
                 NameValueCollection parameters = new NameValueCollection();
 
@@ -61,6 +64,7 @@ namespace TaxiApp
             }
         }
 
+        //Button used to change the customers password, using his old one and comparing it to the new
         private async void changePasswordBtn_ClickedAsync(object sender, EventArgs e)
         {
             oldPassword = oldPasswordTxt.Text;
@@ -70,7 +74,8 @@ namespace TaxiApp
 
             if (!oldPassword.Equals(newPassword) && newPassword.Equals(newPasswordRepeat))
             {
-                Uri uri = new Uri("https://divided-cages.000webhostapp.com/UpdatePassword.php");
+                //Calling the REST service to update the password
+                Uri uri = new Uri("https://nsterdt.000webhostapp.com/UpdatePassword.php");
                 WebClient client = new WebClient();
                 NameValueCollection parameters = new NameValueCollection();
 

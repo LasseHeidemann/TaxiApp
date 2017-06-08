@@ -14,6 +14,7 @@ namespace TaxiApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PreviousOrders : ContentPage
 	{
+        //Lists for all orders, previous and upcoming ones
         List<Order> upcomingOrders;
         List<Order> pastOrders;
         List<Order> orderList;
@@ -25,6 +26,7 @@ namespace TaxiApp
 		{
             try
             {
+                //Current time, used to check whether orders are in the past or future
                 now = DateTime.Now;
                 id = SessionUser.ID;
                 InitializeComponent();
@@ -39,7 +41,10 @@ namespace TaxiApp
 
                 foreach (Order o in orderList)
                 {
+                    //Parsing the strings to a DateTime, in order to compare them
                     DateTime time = DateTime.ParseExact(o.Date + " " + o.Time, "dd-MM-yyyy HH:mm", null);
+
+                    //Add the orders to the upcomingOrders list, if they are in the future, otherwise in the pastOrders list
                     if (now < time)
                     {
                         upcomingOrders.Add(o);
@@ -59,13 +64,16 @@ namespace TaxiApp
             }
         }
 
+        //Button used to cancel upcoming orders
         private async void cancelOrderBtn_ClickedAsync(object sender, EventArgs e)
         {
-            Uri uri = new Uri("https://divided-cages.000webhostapp.com/CancelOrder.php");
+            //REST service to set the "isCancelled" parameter in the MatcherOrder table to 1
+            Uri uri = new Uri("https://nsterdt.000webhostapp.com/CancelOrder.php");
             WebClient client = new WebClient();
             client.UseDefaultCredentials = true;
             NameValueCollection parameters = new NameValueCollection();
 
+            //Retrieve ID of the latest Order
             parameters.Add("OrderID", latestOrderID + "");
 
             try

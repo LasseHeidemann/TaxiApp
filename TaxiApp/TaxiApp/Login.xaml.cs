@@ -21,16 +21,20 @@ namespace TaxiApp
 			InitializeComponent ();
 		}
 
+        //Button used to log into the application
         private async void loginBtn_ClickedAsync(object sender, EventArgs e)
         {
             String mobilenumber = loginMobileTxt.Text;
             String password = loginPasswordTxt.Text;
             int id = App.DB.Login(mobilenumber, password);
 
+            //ID can't be 0 if a match is found, so 0 means wrong information
             if (id != 0)
             {
                 SessionUser.ID = id;
+                //Opening the Main Page
                 await Navigation.PushAsync(new TabbedMain());
+                //Closing this Page
                 Navigation.RemovePage(this);
             } else
             {

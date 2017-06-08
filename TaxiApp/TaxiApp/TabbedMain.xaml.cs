@@ -12,6 +12,7 @@ namespace TaxiApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedMain : TabbedPage
     {
+        //The main Page, containing the Order, PreviousOrders, AccountPage and Logout pages
         public TabbedMain ()
         {
             try
